@@ -1,7 +1,7 @@
-const apiBaseUrl = 'https://your-azure-function-url';
+const apiBaseUrl = 'https://t7-2021630179-a.azurewebsites.net/api';
 
 async function createArticle(article) {
-    const response = await fetch(`${apiBaseUrl}/CreateArticleFunction`, {
+    const response = await fetch(`${apiBaseUrl}/createarticle`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ async function createArticle(article) {
 }
 
 async function searchArticles(keyword) {
-    const response = await fetch(`${apiBaseUrl}/SearchArticlesFunction`, {
+    const response = await fetch(`${apiBaseUrl}/searcharticles`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ async function searchArticles(keyword) {
 }
 
 async function buyArticle(id, quantity) {
-    const response = await fetch(`${apiBaseUrl}/BuyArticleFunction`, {
+    const response = await fetch(`${apiBaseUrl}/buyarticle`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ async function buyArticle(id, quantity) {
 }
 
 async function removeArticleFromCart(id) {
-    const response = await fetch(`${apiBaseUrl}/RemoveArticleFromCartFunction`, {
+    const response = await fetch(`${apiBaseUrl}/removearticlefromcart`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ async function removeArticleFromCart(id) {
 }
 
 async function clearCart() {
-    const response = await fetch(`${apiBaseUrl}/ClearCartFunction`, {
+    const response = await fetch(`${apiBaseUrl}/clearcart`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
