@@ -19,8 +19,13 @@ document.getElementById('captureForm').addEventListener('submit', async (event) 
             photo: base64Photo
         };
 
-        const result = await createArticle(article);
-        alert(result.message);
+        try {
+            const result = await createArticle(article);
+            alert(result.message);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error al guardar el artículo');
+        }
     };
     reader.readAsDataURL(photo);
 });

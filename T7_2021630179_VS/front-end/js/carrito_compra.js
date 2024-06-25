@@ -12,7 +12,7 @@ async function loadCart() {
     const cartItemsDiv = document.getElementById('cartItems');
     cartItemsDiv.innerHTML = '';
 
-    const cartItems = await getCartItems();
+    const cartItems = await getCartItems();  // Asegúrate de que esta función esté definida en api.js o aquí.
     cartItems.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.classList.add('cart-item');
@@ -24,14 +24,14 @@ async function loadCart() {
             <p>Precio: ${item.price}</p>
             <p>Cantidad: ${item.quantity}</p>
             <p>Costo: ${item.quantity * item.price}</p>
-            <button onclick="removeArticleFromCart(${item.id})">Eliminar artículo</button>
+            <button onclick="removeItemFromCart(${item.id})">Eliminar artículo</button>
         `;
 
         cartItemsDiv.appendChild(itemDiv);
     });
 }
 
-async function removeArticleFromCart(id) {
+async function removeItemFromCart(id) {
     const result = await removeArticleFromCart(id);
     alert(result.message);
     loadCart();
